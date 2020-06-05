@@ -9,3 +9,42 @@
     background: pink;
 }
 
+#green {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+}
+
+#blue {
+    position: absolute;
+    top: 50px;
+    left: 120px;
+}
+
+#red {
+    position: absolute;
+    top: 50px;
+    left: 190px;
+}
+
+/* #line {
+    position: absolute;
+} */
+
+#fat {
+    position: absolute;
+    top: 100px;
+    left:50px;
+}
+
+#thin {
+    position: absolute;
+    top: 100px;
+    left: 120px;
+}
+
+#smaller {
+    position: absolute;
+    top: 100px;
+    left: 190px;
+}
