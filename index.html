@@ -1,102 +1,50 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>画板</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+#canvas{
+    display: block;
+    background: pink;
+}
 
-<body>
-    <canvas id="canvas" width="100" height="100"></canvas>
-    <button id="green">green</button>
-    <button id="blue">blue</button>
-    <button id="red">red</button>
+#green {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+}
 
-    <button id="fat">粗</button>
-    <button id="thin">细</button>
-    <button id="smaller">最細</button>
+#blue {
+    position: absolute;
+    top: 50px;
+    left: 120px;
+}
 
+#red {
+    position: absolute;
+    top: 50px;
+    left: 190px;
+}
 
-    <script>
-        //画线
-        let canvas = document.getElementById("canvas");
-        let ctx = canvas.getContext("2d");
-        canvas.width = document.documentElement.clientWidth
-        canvas.height = document.documentElement.clientHeight
+/* #line {
+    position: absolute;
+} */
 
+#fat {
+    position: absolute;
+    top: 100px;
+    left:50px;
+}
 
-        blue.onclick = () => {
-            ctx.strokeStyle = "blue";
-        }
+#thin {
+    position: absolute;
+    top: 100px;
+    left: 120px;
+}
 
-        green.onclick = () => {
-            ctx.strokeStyle = "green";
-        }
-        red.onclick = () => {
-            ctx.strokeStyle = "red";
-        }
-
-
-
-        //控制粗細
-        let thickness;
-
-        fat.onclick = () => {
-            thickness = 16;
-        }
-
-        thin.onclick = () => {
-            thickness = 6;
-        }
-
-        smaller.onclick = () => {
-            thickness = 2;
-        }
-
-
-
-
-
-        //drawLine
-        function drawLine(x1, y1, x2, y2) {
-            ctx.beginPath();
-            ctx.lineWidth = thickness;
-            ctx.lineCap = "round";
-            ctx.moveTo(x1, y1);
-            ctx.lineTo(x2, y2);
-            ctx.stroke();
-
-        }
-
-        let painting = false;
-        let last;
-
-        canvas.onmousedown = (e) => {
-            painting = true;
-            last = [e.clientX, e.clientY]
-        }
-
-        canvas.onmousemove = (e) => {
-            if (painting === true) {
-                drawLine(last[0], last[1], e.clientX, e.clientY);
-                last = [e.clientX, e.clientY];
-            }
-            else {
-                console.log("do nothing!")
-            }
-        }
-
-        canvas.onmouseup = () => {
-            painting = false;
-        }
-
-    </script>
-
-</body>
-
-
-
-</html>
+#smaller {
+    position: absolute;
+    top: 100px;
+    left: 190px;
+}
